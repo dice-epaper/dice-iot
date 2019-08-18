@@ -3,8 +3,8 @@
 예제> GxEPD > GxFont_GFX_Example
 
 ### 2. korean font
-* u9g2_font_unifont_t_korean1
-* u9g2_font_unifont_t_korean2 는 컴파일 에러 뜸...
+* u8g2_font_unifont_t_korean1
+* u8g2_font_unifont_t_korean2 는 컴파일 에러 뜸...
 * 예시
  display.setFont(u8g2_font_unifont_t_korean1) 
 <href>https://bigwavek.tistory.com/entry/nodeMCU-oled-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C</href>
