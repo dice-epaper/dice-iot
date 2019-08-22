@@ -1,6 +1,0 @@
-# [RFID] CARD UID 받아오기 - 제일 먼저 해야 할 일
-## 1. MFRC522 를 아두이노 라이브러리에서 추가하기
-## 2. MFRC522의 예제 DumpInfo 켜기
-## 2. 다음의 영상을 따라하여 UID만 가져오기 
-
-https://www.youtube.com/watch?v=nkD9xFcrnhY
