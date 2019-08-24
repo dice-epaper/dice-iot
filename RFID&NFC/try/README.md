@@ -15,7 +15,7 @@ https://www.youtube.com/watch?v=nkD9xFcrnhY
 ##### #define PICC_1 0xF2
 ##### #define PICC_2 0xCB
 ##### #define PICC_3 0x56
-##### main code에서 이 부분에서 위에서 가져온 UID로 바꿔줘야 인식 가능 (F9,F2,CB,56 부분을 바꾸면 됨)
+##### main code의 이 부분에서 위에서 가져온 UID로 바꿔줘야 인식 가능 (F9,F2,CB,56 부분을 바꾸면 됨)
 
 ### ★ 그러나 몇 가지 오류가 존재하므로 수정해야 할 필요 있음
 ##### 1. display의 글씨 중 '10,000' 부분이 2번째 태그부터 위치가 밀리는 현상  
