@@ -1,5 +1,5 @@
 #include <GxEPD.h>
-#include <GxFont_GFX.h>  F
+#include <GxFont_GFX.h>  
 #include <Adafruit_GFX.h>
 #include <SoftwareSerial.h>
 #include <DFRobotDFPlayerMini.h>  // 서보 라이브러리
@@ -99,10 +99,10 @@ void loop() {
 
 
   //ID가 등록된 ID와 동일하다면
-  if (rfid.uid.uidByte[0] != PICC_0 || 
-      rfid.uid.uidByte[1] != PICC_1 || 
-      rfid.uid.uidByte[2] != PICC_2 || 
-      rfid.uid.uidByte[3] != PICC_3 ) {
+  if (rfid.uid.uidByte[0] == PICC_0 || 
+      rfid.uid.uidByte[1] == PICC_1 || 
+      rfid.uid.uidByte[2] == PICC_2 || 
+      rfid.uid.uidByte[3] == PICC_3 ) {
 
    
     Serial.println(F("This is a confirmed Card."));   
