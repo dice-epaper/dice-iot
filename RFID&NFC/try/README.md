@@ -2,7 +2,7 @@
 ### ♠ CARD UID 받아오기 - 제일 먼저 해야 할 일
 ##### 1. MFRC522 를 아두이노 라이브러리에서 추가하기
 ##### 2. MFRC522의 예제 DumpInfo 켜기
-##### 3. 다음의 영상을 따라하여 UID만 가져오기 
+##### 3. 다음의 영상을 따라하여 UID만 가져오기 (시리얼 모니터에서 확인할 수 있음) 
 https://www.youtube.com/watch?v=nkD9xFcrnhY
 
 
@@ -10,7 +10,12 @@ https://www.youtube.com/watch?v=nkD9xFcrnhY
 ![image](https://user-images.githubusercontent.com/53041002/63530753-1279db00-c542-11e9-9bca-2be37548ebe6.png)
 ![image](https://user-images.githubusercontent.com/53041002/63521666-dc345f80-c531-11e9-8593-98ca66aec650.png)
 ![image](https://user-images.githubusercontent.com/53041002/63521686-e7878b00-c531-11e9-87f3-baf5621a29d2.png)
-
+#### ※ 주의 - main code
+##### #define PICC_0 0xF9 
+##### #define PICC_1 0xF2
+##### #define PICC_2 0xCB
+##### #define PICC_3 0x56
+##### main code에서 이 부분에서 위에서 가져온 UID로 바꿔줘야 인식 가능 (F9,F2,CB,56 부분을 바꾸면 됨)
 
 ### ★ 그러나 몇 가지 오류가 존재하므로 수정해야 할 필요 있음
 ##### 1. display의 글씨 중 '10,000' 부분이 2번째 태그부터 위치가 밀리는 현상  
