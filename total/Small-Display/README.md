@@ -7,7 +7,7 @@
   * 위치, 크기 변수 받기
   
     > 예시  
-     showBitmap( "arrow", 70, 55, 120, 40 ); 
+     showBitmap( "arrow", 70, 55, 120, 40 );   
      // Image_sale.h 파일에서 "arrow" bitmap을 70,55 위치에 120*40 크기로 배치
 
 #### 2. void showFont(const char name[], const uint8_t *f, const int num1, const int num2)
