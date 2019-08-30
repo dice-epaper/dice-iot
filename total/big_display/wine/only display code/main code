@@ -31,11 +31,17 @@ void setup()
   display.init(115200); // enable diagnostic output on Serial
   Serial.println("setup done");
   /*Display Test*/
+  
+  //바탕색 design//
   display.fillScreen(GxEPD_WHITE);
   display.fillRect(0, 0, 400, 40, GxEPD_RED);
   display.fillRect(0, 42, 400, 108, GxEPD_BLACK);
   display.fillRect(0, 40, 400, 2, GxEPD_WHITE);
+  
+  //당도, 도수 표기 design//
   wine();
+  
+  //기본 가격표 design//
   display.drawExampleBitmap(ghktkfvy, 260, 190, 120, 40, GxEPD_RED);
   display.drawExampleBitmap(salesale, 20, 240, 160, 40, GxEPD_RED);
   display.setCursor(20, 190);
@@ -48,6 +54,7 @@ void setup()
   showfreeFont("8,000", &FreeSansBold24pt7b,GxEPD_BLACK);
   display.setCursor(230,290);
   showfreeFont("19.08.25 ~ 19.08.29",&FreeSans9pt7b,GxEPD_BLACK);
+  
   display.update();
 }
 
@@ -61,18 +68,24 @@ void loop()
 void wine()
 {
   display.setRotation(0);
-  display.drawExampleBitmap(winecup, 170, 50 , 20, 40 ,GxEPD_BLACK);
-  display.drawExampleBitmap(winecup, 205, 50 , 20, 40 ,GxEPD_BLACK);
-  display.drawExampleBitmap(winecup, 240, 50 , 20, 40 ,GxEPD_BLACK);
-  display.drawExampleBitmap(winecup, 275, 50 , 20, 40 ,GxEPD_BLACK);
-  display.drawExampleBitmap(winecup, 310, 50 , 20, 40 ,GxEPD_BLACK);
-  display.drawExampleBitmap(winecup, 345, 50 , 20, 40 ,GxEPD_BLACK);
-  display.drawExampleBitmap(winecup, 170, 100 , 20, 40 ,GxEPD_BLACK);
-  display.drawExampleBitmap(winecup, 205, 100 , 20, 40 ,GxEPD_BLACK);
-  display.drawExampleBitmap(winecup, 240, 100 , 20, 40 ,GxEPD_BLACK);
-  display.drawExampleBitmap(winecup, 275, 100 , 20, 40 ,GxEPD_BLACK);
-  display.drawExampleBitmap(winecup, 310, 100 , 20, 40 ,GxEPD_BLACK);
-  display.drawExampleBitmap(winecup, 345, 100 , 20, 40 ,GxEPD_BLACK);
+  
+  //당도//
+  display.drawExampleBitmap(winecup, 170, 50 , 20, 40 ,GxEPD_BLACK); //1잔
+  display.drawExampleBitmap(winecup, 205, 50 , 20, 40 ,GxEPD_BLACK); //2잔
+  display.drawExampleBitmap(winecup, 240, 50 , 20, 40 ,GxEPD_BLACK); //3잔
+  display.drawExampleBitmap(winecup, 275, 50 , 20, 40 ,GxEPD_BLACK); //4잔
+  display.drawExampleBitmap(winecup, 310, 50 , 20, 40 ,GxEPD_BLACK); //5잔
+  display.drawExampleBitmap(winecup, 345, 50 , 20, 40 ,GxEPD_BLACK); //6잔
+  
+  //도수//
+  display.drawExampleBitmap(winecup, 170, 100 , 20, 40 ,GxEPD_BLACK); //1잔
+  display.drawExampleBitmap(winecup, 205, 100 , 20, 40 ,GxEPD_BLACK); //2잔
+  display.drawExampleBitmap(winecup, 240, 100 , 20, 40 ,GxEPD_BLACK); //3잔
+  display.drawExampleBitmap(winecup, 275, 100 , 20, 40 ,GxEPD_BLACK); //4잔
+  display.drawExampleBitmap(winecup, 310, 100 , 20, 40 ,GxEPD_BLACK); //5잔
+  display.drawExampleBitmap(winecup, 345, 100 , 20, 40 ,GxEPD_BLACK); //6잔
+  
+  //design//
   display.setCursor(85, 25);
   showfreeFont("WINE OF",&FreeSansBold12pt7b,GxEPD_WHITE);
   display.setCursor(210, 33);
