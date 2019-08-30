@@ -30,7 +30,8 @@ void setup()
   display.init(115200); // enable diagnostic output on Serial
   Serial.println("setup done");
   /*Display Test*/
-//세로
+
+  //표 & 테두리 design//
   display.fillRect(0,0,400,2,GxEPD_BLACK);
   display.fillRect(398,0,2,300,GxEPD_BLACK);
   display.fillRect(0,0,2,300,GxEPD_BLACK);
@@ -38,7 +39,8 @@ void setup()
   display.fillRect(200,0,2,45,GxEPD_BLACK);
   display.fillRect(250,0,2,45,GxEPD_BLACK);
   display.fillRect(299,0,2,45,GxEPD_BLACK);
-  display.fillRect(348,0,2,45,GxEPD_BLACK);
+  display.fillRect(332,0,2,45,GxEPD_BLACK);
+  display.fillRect(365,0,2,45,GxEPD_BLACK);
   display.fillRect(200,45,80,90,GxEPD_BLACK);
   display.fillRect(200,45,200,2,GxEPD_BLACK);
   display.fillRect(280,90,119,2,GxEPD_BLACK);
@@ -47,38 +49,46 @@ void setup()
   display.fillRect(0,135,400,2,GxEPD_BLACK);
   display.fillRect(0,180,400,2,GxEPD_BLACK);
 
+  //등급 기본 설정//
   display.setCursor(205, 23);
   showfreeFont("1++",&FreeSans12pt7b,GxEPD_BLACK);
   display.setCursor(261, 30);
   showfreeFont("1+",&FreeSans12pt7b,GxEPD_BLACK);
-  display.setCursor(319, 30);
+  display.setCursor(310, 30);
+  showfreeFont("1",&FreeSans12pt7b,GxEPD_BLACK);
+  display.setCursor(343, 30);
   showfreeFont("2",&FreeSans12pt7b,GxEPD_BLACK);
-  display.setCursor(368, 30);
+  display.setCursor(376, 30);
   showfreeFont("3",&FreeSans12pt7b,GxEPD_BLACK);
 
-  firstfirst();
+  //등급 표기 - 무조건 등급 기본 설정보다 다음에 있어야 함//
+  first_pp();
 
+  //기본 가격표//
   display.setCursor(15, 216);
-  showfreeFont("100g",&FreeSans12pt7b,GxEPD_RED);
+  showfreeFont("100g",&FreeSans12pt7b,GxEPD_BLACK);
   display.setCursor(260, 260);
-  showfreeFont("5,000",&FreeSansBold24pt7b,GxEPD_RED);
+  showfreeFont("5,000",&FreeSansBold24pt7b,GxEPD_BLACK);
 
+  //소 부위 그림//
   display.drawExampleBitmap(cow, 22, 20, 158, 97, GxEPD_WHITE);
   display.fillRect(85,76,1,2,GxEPD_WHITE);
-  uzok();
+
+  //소 부위 함수//
+  galbi();
+
+  //행사 시 - 화살표(+ 행사 전 가격) & sale image & 행사 날짜//
   event();
-  
+
+  //표//
   display.setCursor(210, 73);
   showFont("원 산 지", u8g2_font_unifont_t_korean1,GxEPD_WHITE,GxEPD_BLACK);
-  // 등급에서 '급' 한글 없음 ^^
   display.setCursor(315, 73);
   showFont("국내산", u8g2_font_unifont_t_korean1,GxEPD_BLACK,GxEPD_WHITE);
-  
   display.setCursor(208, 120);
   showFont("용    도", u8g2_font_unifont_t_korean1,GxEPD_WHITE,GxEPD_BLACK);
   display.setCursor(315, 120);
   showFont("국, 탕", u8g2_font_unifont_t_korean1,GxEPD_BLACK,GxEPD_WHITE);
-  
   display.setCursor(30, 163);
   showFont("유 통 식 별 번 호", u8g2_font_unifont_t_korean1,GxEPD_WHITE,GxEPD_BLACK);
   display.setCursor(250, 163);
@@ -92,35 +102,42 @@ void loop()
   //
 }
 
-void firstfirst()
+void first_pp() // 등급 중 '1++' 색칠
 {
   display.fillRect(202,2,48,43,GxEPD_RED);
   display.setCursor(205, 30);
   showfreeFont("1++",&FreeSans12pt7b,GxEPD_WHITE);
 }
 
-void first()
+void first_p() // 등급 중 '1+' 색칠
 {
   display.fillRect(252,2,47,43,GxEPD_RED);
   display.setCursor(261, 30);
   showfreeFont("1+",&FreeSans12pt7b,GxEPD_WHITE);
 }
 
-void second()
+void first() // 등급 중 '1' 색칠
 {
-  display.fillRect(301,2,47,43,GxEPD_RED);
-  display.setCursor(319, 30);
+  display.fillRect(301,2,31,43,GxEPD_RED);
+  display.setCursor(310, 30);
+  showfreeFont("1",&FreeSans12pt7b,GxEPD_WHITE);
+}
+
+void second() //  등급 중 '2' 색칠
+{
+  display.fillRect(334,2,31,43,GxEPD_RED);
+  display.setCursor(343, 30);
   showfreeFont("2",&FreeSans12pt7b,GxEPD_WHITE);
 }
 
-void third()
+void third() // 등급 중 '3' 색칠 
 {
-  display.fillRect(350,2,48,43,GxEPD_RED);
-  display.setCursor(368, 30);
+  display.fillRect(367,2,31,43,GxEPD_RED);
+  display.setCursor(376, 30);
   showfreeFont("3",&FreeSans12pt7b,GxEPD_WHITE);
 }
 
-void moksim()
+void moksim() // 부위 중 '목심' 색칠
 {
   display.fillRect(65,28,2,1,GxEPD_RED);
   display.fillRect(65,29,13,8,GxEPD_RED);
@@ -130,7 +147,7 @@ void moksim()
   showFont("목심", u8g2_font_unifont_t_korean1,GxEPD_RED,GxEPD_WHITE);
 }
 
-void dungsim()
+void dungsim() // 부위 중 '등심' 색칠
 {
   display.fillRect(86,28,8,1,GxEPD_RED);
   display.fillRect(81,29,44,12,GxEPD_RED);
@@ -138,7 +155,7 @@ void dungsim()
   showFont("등심", u8g2_font_unifont_t_korean1,GxEPD_RED,GxEPD_WHITE);
 }
 
-void chaqut()
+void chaqut() // 부위 중 '채끝' 색칠
 {
   display.fillRect(129,29,15,3,GxEPD_RED);
   display.fillRect(128,32,16,8,GxEPD_RED);
@@ -147,7 +164,7 @@ void chaqut()
   showFont("채끝", u8g2_font_unifont_t_korean1,GxEPD_RED,GxEPD_WHITE);
 }
 
-void udun()
+void udun() // 부위 중 '우둔' 색칠
 {
   display.fillRect(147,29,13,4,GxEPD_RED);
   display.fillRect(147,33,14,1,GxEPD_RED);
@@ -161,11 +178,12 @@ void udun()
   display.fillRect(149,49,18,1,GxEPD_RED);
   display.setCursor(22, 115);
   showFont("우둔", u8g2_font_unifont_t_korean1,GxEPD_RED,GxEPD_WHITE);
-  //"둔"이 안나옴..ㅜㅜ
+  
+  //"둔"이 없어서 만듬//
   display.drawExampleBitmap(dun,40, 102, 11, 14, GxEPD_RED);
 }
 
-void apdari()
+void apdari() // 부위 중 '앞다리' 색칠
 {
   display.fillRect(68,44,17,1,GxEPD_RED);
   display.fillRect(67,45,19,1,GxEPD_RED);
@@ -176,7 +194,8 @@ void apdari()
   showFont("앞다리", u8g2_font_unifont_t_korean1,GxEPD_RED,GxEPD_WHITE);
 }
 
-void galbi(){
+void galbi() // 부위 중 '갈비' 색칠
+{
   display.fillRect(93,44,20,1,GxEPD_RED);
   display.fillRect(91,45,34,1,GxEPD_RED);
   display.fillRect(90,46,39,1,GxEPD_RED);
@@ -191,7 +210,8 @@ void galbi(){
   showFont("갈비", u8g2_font_unifont_t_korean1,GxEPD_RED,GxEPD_WHITE);
 }
 
-void ansim(){
+void ansim() // 부위 중 '안심' 색칠
+{
   display.fillRect(136,44,6,1,GxEPD_RED);
   display.fillRect(138,45,5,1,GxEPD_RED);
   display.fillRect(139,46,3,1,GxEPD_RED);
@@ -200,7 +220,8 @@ void ansim(){
   showFont("안심", u8g2_font_unifont_t_korean1,GxEPD_RED,GxEPD_WHITE);
 }
 
-void sate(){
+void sate() // 부위 중 '사태' 색칠
+{
   display.fillRect(68,70,15,1,GxEPD_RED);
   display.fillRect(67,71,17,1,GxEPD_RED);
   display.fillRect(68,72,16,1,GxEPD_RED);
@@ -222,7 +243,8 @@ void sate(){
   showFont("사태", u8g2_font_unifont_t_korean1,GxEPD_RED,GxEPD_WHITE); 
 }
 
-void yangzi(){
+void yangzi() // 부위 중 '양지' 색칠
+{
   display.fillRect(87,70,43,1,GxEPD_RED);
   display.fillRect(87,71,45,3,GxEPD_RED);
   display.fillRect(88,74,44,2,GxEPD_RED);
@@ -234,7 +256,8 @@ void yangzi(){
   showFont("양지", u8g2_font_unifont_t_korean1,GxEPD_RED,GxEPD_WHITE);
 }
 
-void suldo(){
+void suldo() // 부위 중 '설도' 색칠
+{
   display.fillRect(139,51,4,1,GxEPD_RED);
   display.fillRect(139,52,7,1,GxEPD_RED);
   display.fillRect(139,53,27,2,GxEPD_RED);
@@ -256,7 +279,8 @@ void suldo(){
   showFont("설도", u8g2_font_unifont_t_korean1,GxEPD_RED,GxEPD_WHITE);
 }
 
-void kkori(){
+void kkori() // 부위 중 '꼬리' 색칠
+{
   display.fillRect(163,29,2,1,GxEPD_RED);
   display.fillRect(164,30,3,1,GxEPD_RED);
   display.fillRect(164,31,4,1,GxEPD_RED);
@@ -280,10 +304,13 @@ void kkori(){
   display.fillRect(169,87,1,2,GxEPD_RED);
   display.setCursor(22, 115);
   showFont("  리", u8g2_font_unifont_t_korean1,GxEPD_RED,GxEPD_WHITE);
+  
+  //"꼬"가 없어서 만듬//
   display.drawExampleBitmap(kko ,22, 104, 11, 11, GxEPD_RED);
 }
 
-void sagol(){
+void sagol() // 부위 중 '사골' 색칠
+{
   display.fillRect(78,85,7,3,GxEPD_RED);
   display.fillRect(78,88,6,2,GxEPD_RED);
   display.fillRect(79,90,5,3,GxEPD_RED);
@@ -299,10 +326,13 @@ void sagol(){
   display.fillRect(147,89,9,3,GxEPD_RED);
   display.setCursor(22, 115);
   showFont("사골", u8g2_font_unifont_t_korean1,GxEPD_RED,GxEPD_WHITE);
+  
+  //"골"이 없어서 만듬//
   display.drawExampleBitmap(gol ,42, 101, 11, 14, GxEPD_RED);
 }
 
-void uzok(){
+void uzok() // 부위 중 '우족' 색칠
+{
   display.fillRect(80,97,2,9,GxEPD_RED);
   display.fillRect(80,106,3,2,GxEPD_RED);
   display.fillRect(79,108,4,2,GxEPD_RED);
@@ -324,13 +354,12 @@ void uzok(){
   showFont("우족", u8g2_font_unifont_t_korean1,GxEPD_RED,GxEPD_WHITE);
 }
 
-void event(){
+void event() //행사 시 추가사항
+{
   display.drawExampleBitmap(ghktkfvy, 260, 200, 120, 40, GxEPD_RED);
-  display.drawExampleBitmap(vipsale, 18, 242, 160, 40, GxEPD_RED);
+  display.drawExampleBitmap(supersale, 18, 242, 160, 40, GxEPD_RED);
   display.setCursor(280 ,210);
   showfreeFont("6,000", &FreeSans12pt7b,GxEPD_BLACK);
-  display.setCursor(15, 216);
-  showfreeFont("100g",&FreeSans12pt7b,GxEPD_BLACK);
   display.setCursor(260, 260);
   showfreeFont("5,000",&FreeSansBold24pt7b,GxEPD_RED);
   display.setCursor(230,290);
