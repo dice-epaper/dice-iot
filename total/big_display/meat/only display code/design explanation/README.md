@@ -1,5 +1,5 @@
 # [소고기 전용 가격표]
-![image](https://user-images.githubusercontent.com/53041002/64014578-72cdd580-cb5d-11e9-80d1-5477250fcd55.png)
+![image](https://user-images.githubusercontent.com/53041002/64019301-c0e8d600-cb69-11e9-8aea-8141c3bb5441.png)
 ## ▣ 서버 input
 ### ☆ 기본 (행사 유무와 관계 없음)
 #### 1. 버튼형 부위 선택 - [목심], [등심], [채끝], [우둔], [안심], [앞다리], [갈비], [양지], [설도], [사태], [꼬리], [사골], [우족]
