@@ -38,4 +38,4 @@ display.update() ---> call_display_update()
 ※ 참고로, 마감시간을 지나면 아래와 같은 화면이 뜹니다.
 ![image](https://user-images.githubusercontent.com/37296369/64184917-2fe66780-cea7-11e9-8e7d-901893d7cbfc.png)
 
-4. (Card) 로 Tagg 해줍니다.
+4. (Card) 로 Tag 해줍니다.
