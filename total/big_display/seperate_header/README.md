@@ -11,7 +11,10 @@
 [예시]  
 display.update() ---> call_display_update()
 
-2. 새로운 함수 추가 시
+2. Wifi 관련 정의는  
+<code> SW_Timer</code> 에 있습니다!  
+
+3. 새로운 함수 추가 시
 * [적절한 HW] .cpp & .h file 을 찾습니다. 
 * <code>oo.cpp</code> 파일에서 함수를 (정의)합니다.  
 
@@ -24,7 +27,7 @@ display.update() ---> call_display_update()
 
 ## Timer 작동을 위한 안내
 1. wifi setting을 꼭! 해줍니다.  
-<code> main 함수의 setup() </code> 에서 <code> call_WIFI_setup("ssid", "password"); </code>  
+<code> main 함수의 setup() </code> 에서 <code> call_WIFI_setup("ssid", "password");</code>  
 현재 환경에 맞는 ssid, password로 change
 
 2. 시리얼 모니터로 확인하기
