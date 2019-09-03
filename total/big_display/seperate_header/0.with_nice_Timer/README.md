@@ -1,5 +1,5 @@
-1. with Timer 
- 중간에 RFID Tagging 가능
+1. with Timer   
+중간에 RFID Tagging 가능함!
  
 2. 수정 및 추가 해야 할것
 * Wine, 소고기 IMG 넣기
