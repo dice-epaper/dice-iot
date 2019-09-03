@@ -20,6 +20,7 @@
 #if defined(ESP8266)
 GxIO_Class io(SPI, /*CS=D8*/ SS, /*DC=D3*/ 0, /*RST=D4*/ 2); // arbitrary selection of D3(=0), D4(=2), selected for default of GxEPD_Class
 GxEPD_Class display(io, /*RST=D4*/ 2, /*BUSY=D2*/ 4); // default selection of D4(=2), D2(=4)
+
 #endif
 
 void setup()
@@ -85,15 +86,28 @@ void setup()
   showFont("원 산 지", u8g2_font_unifont_t_korean1,GxEPD_WHITE,GxEPD_BLACK);
   display.setCursor(315, 73);
   showFont("국내산", u8g2_font_unifont_t_korean1,GxEPD_BLACK,GxEPD_WHITE);
+  //"미국산", "호주산" 모두 가능//
   display.setCursor(208, 120);
   showFont("용    도", u8g2_font_unifont_t_korean1,GxEPD_WHITE,GxEPD_BLACK);
-  display.setCursor(315, 120);
-  showFont("국, 탕", u8g2_font_unifont_t_korean1,GxEPD_BLACK,GxEPD_WHITE);
+  //display.setCursor(323, 120);
+  //showFont("구이", u8g2_font_unifont_t_korean1,GxEPD_BLACK,GxEPD_WHITE);
+  //display.setCursor(324, 120);
+  //showFont("육수", u8g2_font_unifont_t_korean1,GxEPD_BLACK,GxEPD_WHITE);
+  //display.setCursor(332, 120);
+  //showFont("국", u8g2_font_unifont_t_korean1,GxEPD_BLACK,GxEPD_WHITE);
+  display.setCursor(320, 120);
+  showFont("탕/", u8g2_font_unifont_t_korean1,GxEPD_BLACK,GxEPD_WHITE);
+  display.drawExampleBitmap(zzim, 345, 108, 11, 13, GxEPD_BLACK);
   display.setCursor(30, 163);
   showFont("유 통 식 별 번 호", u8g2_font_unifont_t_korean1,GxEPD_WHITE,GxEPD_BLACK);
   display.setCursor(250, 163);
   showFont("800102613244", u8g2_font_unifont_t_korean1,GxEPD_BLACK,GxEPD_WHITE);
-  
+
+  //마감 옵션 - 나중에 추가할 수도 있음//
+  //display.fillRect(318,274,74,20,GxEPD_RED);
+  //display.setCursor(319, 290);
+  //showfreeFont("19.08.29",&FreeSans9pt7b,GxEPD_WHITE);
+
   display.update();
 }
 
