@@ -6,9 +6,9 @@ E-Paper와 MQTT 통신을 이용한 저전력, 쌍방향 통신 전자가격표�
 ![image](https://user-images.githubusercontent.com/37296369/66264483-0bcccc00-e841-11e9-963e-0f54d7c8b888.png)
 ![image](https://user-images.githubusercontent.com/37296369/66264488-17b88e00-e841-11e9-8833-09510dc36711.png)
 ### 2) H/W 설계도
-- 전체 설계도
+- 전체 설계도   
 ![image](https://user-images.githubusercontent.com/37296369/66264501-4fbfd100-e841-11e9-895c-b991ae5b21c7.png)
-- PIN Mapping
+- PIN Mapping  
 ![image](https://user-images.githubusercontent.com/37296369/66264507-77af3480-e841-11e9-8619-fed2f2404b38.png)
 
 ## 2. 작품 구성도	
@@ -19,9 +19,9 @@ E-Paper와 MQTT 통신을 이용한 저전력, 쌍방향 통신 전자가격표�
 ### 3) 서비스 흐름도
 ![image](https://user-images.githubusercontent.com/37296369/66264383-4df50e00-e83f-11e9-937d-387e089e5366.png)
 ### 4) 전체 기능 목록
-![image](https://user-images.githubusercontent.com/37296369/66264525-f1dfb900-e841-11e9-8a9e-46399c182b4f.png)
+![image](https://user-images.githubusercontent.com/37296369/66264580-e6d95880-e842-11e9-88bf-28449fef885e.png)
 ### 5) 개발 환경
-![image](https://user-images.githubusercontent.com/37296369/66264450-7fbaa480-e840-11e9-8b7c-768d287e7e12.png)
+![image](https://user-images.githubusercontent.com/37296369/66264564-b0034280-e842-11e9-98bd-90f2618b7e84.png)
 
 ## 3. 개발 배경 및 필요성	
 - ESL로 대체되는 추세 보편화된 '종이'가격표시기와 다르게 '전자'가격표시기(이하 ESL)는 능동적 가격변경과 재사용이 가능합니다. 이에 대형마트에서는 ESL로 대체되고 있는 추세입니다. 
