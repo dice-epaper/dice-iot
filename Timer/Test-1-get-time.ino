@@ -1,8 +1,8 @@
 #include <ESP8266WiFi.h>
 #include <time.h>
 
-const char* ssid = "AndroidHotspot8114";
-const char* password = "a4q7c689dwx1";
+const char* ssid = "***";
+const char* password = "***";
 
 int timezone = 3;
 int dst = 0;
